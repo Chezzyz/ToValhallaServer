@@ -1,17 +1,16 @@
 package ru.rsc.tovalhallaserver.domain.model;
 
-import lombok.Data;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Value;
 
 import javax.persistence.Embeddable;
-import java.time.Duration;
 
-@Value
+@Getter
 @Embeddable
+@NoArgsConstructor
+@AllArgsConstructor
 public class Score {
     String levelName;
     Integer height;
-    Integer coins;
-    Duration flyTime;
 }

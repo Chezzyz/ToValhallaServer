@@ -25,6 +25,9 @@ public class Player {
     @Column(name = "uuid", nullable = false)
     private UUID uuid;
 
+    @Column(name = "player_id", nullable = false)
+    private UUID playerId;
+
     @Column(name = "username", nullable = false)
     private String username;
 
@@ -73,9 +76,11 @@ public class Player {
         updateTimestamp = LocalDateTime.now();
     }
 
-    public Player(UUID uuid, String username, Duration gameTime, Duration entireFlyTime, Integer sessionsCount,
+
+    public Player(UUID uuid, UUID playerId, String username, Duration gameTime, Duration entireFlyTime, Integer sessionsCount,
                   Integer coinsCount, Integer hammersCount, Integer skinsCount, Integer artifactsCount, List<Score> bestScores){
         this.uuid = uuid;
+        this.playerId = playerId;
         this.username = username;
         this.gameTime = gameTime;
         this.entireFlyTime = entireFlyTime;
